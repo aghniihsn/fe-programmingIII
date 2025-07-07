@@ -7,13 +7,16 @@ import { MahasiswaPage } from "./pages/MahasiswaPage";
 import { TambahMahasiswaPage } from "./pages/TambahMahasiswaPage";
 import { EditMahasiswaPage } from "./pages/EditMahasiswaPage";
 import { LoginPage } from "./pages/LoginPage";
+import { RegisterPage } from "./pages/RegisterPage";
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Public Route */}
+        {/* Public Routes */}
         <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
 
         {/* Protected Routes with Dashboard Layout */}
         <Route

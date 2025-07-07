@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { login } from "../services/authService";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useEffect } from "react";
 
 export function LoginPage() {
@@ -11,7 +11,7 @@ export function LoginPage() {
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (token) navigate("/dashboard");
-    }, []);
+    }, [navigate]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -59,6 +59,14 @@ export function LoginPage() {
                 >
                     Login
                 </button>
+                <div className="text-center mt-4">
+                    <p className="text-gray-600">
+                        Belum punya akun?{" "}
+                        <Link to="/register" className="text-blue-500 hover:text-blue-600 font-medium">
+                            Daftar di sini
+                        </Link>
+                    </p>
+                </div>
             </form>
         </div>
     );
